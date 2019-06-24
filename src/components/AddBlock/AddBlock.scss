@@ -57,7 +57,7 @@ input, textarea {
       letter-spacing: 1.5px;
 
 			pointer-events: none;
-			transition: bottom .2s cubic-bezier(0.9,-0.15, 0.1, 1.15), opacity .2s ease-out;
+			transition: bottom .450 cubic-bezier(0.9,-0.15, 0.1, 1.15), opacity .2s ease-out;
 			will-change: bottom, opacity;
 		}
 	}
@@ -102,6 +102,7 @@ input, textarea {
 			& ~ .labelWrap span {
 				opacity: 1;
 				bottom: 200px;
+				transition: bottom .450s cubic-bezier(0.9,-0.15, 0.1, 1.15)
 			}
 		}
 	}
