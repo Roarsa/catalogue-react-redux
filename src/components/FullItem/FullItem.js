@@ -21,11 +21,11 @@ class FullItem extends React.PureComponent {
             value={item.name}
             onChange={event => actions.renameItem(item.id, event.target.value)}
             onBlur={() => {
-              actions.changeEditField(item.id, '')
+              actions.changeEditField(-1, '')
             }}
             onKeyPress={(event) => {
               if (event.keyCode === 13) {
-                actions.changeEditField(item.id, '')
+                actions.changeEditField(-1, '')
               }
             }}
           /> : <h1 onDoubleClick={() => actions.changeEditField(item.id, 'name')}>{item.name}</h1>}
@@ -34,26 +34,25 @@ class FullItem extends React.PureComponent {
             value={item.author}
             onChange={event => actions.changeItemAuthor(item.id, event.target.value)}
             onBlur={() => {
-              actions.changeEditField(item.id, '')
+              actions.changeEditField(-1, '')
             }}
             onKeyPress={(event) => {
               if (event.keyCode === 13) {
-                actions.changeEditField(item.id, '')
+                actions.changeEditField(-1, '')
               }
             }}
           /> : <h2 onDoubleClick={() => actions.changeEditField(item.id, 'author')}>{item.author}</h2>}
 
           <img src={item.photo}></img>
-
-          {isEditing && currentEditField === 'description' ? <input
+          {isEditing && currentEditField === 'description' ? <textarea
             value={item.description}
             onChange={event => actions.changeItemDescription(item.id, event.target.value)}
             onBlur={() => {
-              actions.changeEditField(item.id, '')
+              actions.changeEditField(-1, '')
             }}
             onKeyPress={(event) => {
               if (event.keyCode === 13) {
-                actions.changeEditField(item.id, '')
+                actions.changeEditField(-1, '')
               }
             }}
           /> : <p onDoubleClick={() => actions.changeEditField(item.id, 'description')}>{item.description}</p>}

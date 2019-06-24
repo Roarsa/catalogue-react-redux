@@ -2,6 +2,39 @@
   display: block;
   margin: 10px 50px;
 
+  input, textarea {
+    display: block;
+    background-color: transparent;
+    transition: transform 250ms ease-in-out;
+    font-size: 14px;
+    line-height: 18px;
+    border-radius: 50px;
+    border: 1px solid #575756;
+    transition: all 250ms ease-in-out;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    outline: none;
+    padding: 10px 15px;
+    height: 50px;
+    width: 250px;
+    font-size: 1em;
+
+    color: color(#575756 a(0.5));
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+
+    margin-bottom: 10px;
+
+    font-family:"Helvetica Neue", Helvetica, sans-serif; 
+  }
+
+  textarea {
+    margin-right: 0;
+    width: 500px;
+    height: 500px;
+    text-transform: none;
+  }
+
   img {
     max-width: 500px;
     max-height: 300px;

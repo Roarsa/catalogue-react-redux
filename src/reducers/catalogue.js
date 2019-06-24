@@ -37,8 +37,8 @@ export default (state = initialState, action = {}) => {
     case types.CHANGE_EDIT_FIELD:
       return {
         ...state,
-        currentEditId: state.currentEditId === action.id ? -1 : action.id,
-        currentEditField: state.currentEditField === action.field ? 'none' : action.field,
+        currentEditId: action.id,
+        currentEditField: action.field,
       };
     case types.CHANGE_ITEM_DESCRIPTION:
       return {

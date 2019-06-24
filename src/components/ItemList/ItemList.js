@@ -13,6 +13,14 @@ import { createBrowserHistory } from "history";
 const browserHistory = createBrowserHistory();
 
 class ToDoItems extends React.PureComponent {
+  componentDidMount() {
+    document.body.addEventListener('click', (e) => {
+      if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+        this.props.actions.changeEditField(-1, "");
+      }
+    });
+  }
+
   render() {
     const {
       items,
@@ -23,11 +31,12 @@ class ToDoItems extends React.PureComponent {
     const itemList = items.reverse();
     return (
       <Router history={browserHistory}>
-        <Route path={["/", "/items"]} render={() =>
+        <Route path={["/", "/items"]} render={({ location }) =>
           <div className={style.root}>
             <Search />
             <div className={style.itemList}>
               {itemList.map((item) => {
+                console.log(location);
                 return (
                   <Item
                     key={item.id}
