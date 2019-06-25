@@ -23,7 +23,7 @@ class FullItem extends React.PureComponent {
             onBlur={() => {
               actions.changeEditField(-1, '')
             }}
-            onKeyPress={(event) => {
+            onKeyDown={(event) => {
               if (event.keyCode === 13) {
                 actions.changeEditField(-1, '')
               }
@@ -36,7 +36,7 @@ class FullItem extends React.PureComponent {
             onBlur={() => {
               actions.changeEditField(-1, '')
             }}
-            onKeyPress={(event) => {
+            onKeyDown={(event) => {
               if (event.keyCode === 13) {
                 actions.changeEditField(-1, '')
               }
@@ -50,7 +50,7 @@ class FullItem extends React.PureComponent {
             onBlur={() => {
               actions.changeEditField(-1, '')
             }}
-            onKeyPress={(event) => {
+            onKeyDown={(event) => {
               if (event.keyCode === 13) {
                 actions.changeEditField(-1, '')
               }
