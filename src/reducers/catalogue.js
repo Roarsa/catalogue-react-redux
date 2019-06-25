@@ -1,7 +1,7 @@
 import types from '../actions/actionTypes';
 
 const initialState = {
-  url: '/',
+  search: '',
   currentId: 0,
   currentEditId: -1,
   currentEditField: 'none',
@@ -29,10 +29,10 @@ export default (state = initialState, action = {}) => {
           item.id !== action.id
         )
       };
-    case types.CHANGE_URL:
+    case types.CHANGE_SEARCH:
       return {
         ...state,
-        url: action.url,
+        search: action.search,
       }
     case types.CHANGE_EDIT_FIELD:
       return {

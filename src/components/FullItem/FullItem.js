@@ -1,6 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import PropTypes from 'prop-types';
+import history from '../../history'
 
 import styles from './FullItem.scss'
 
@@ -13,10 +14,9 @@ class FullItem extends React.PureComponent {
       actions,
     } = this.props;
     return (
-      <Router>
-        <div className={styles.root}>
-          <p><Link to={`/`}>Назад</Link></p>
-
+      <Router history={history}>
+        <Route path={`/items/${item.id}`} render={() => <div className={styles.root}>
+          <p><Link to="/">Закрыть</Link></p>
           {isEditing && currentEditField === 'name' ? <input
             value={item.name}
             onChange={event => actions.renameItem(item.id, event.target.value)}
@@ -56,7 +56,7 @@ class FullItem extends React.PureComponent {
               }
             }}
           /> : <p onDoubleClick={() => actions.changeEditField(item.id, 'description')}>{item.description}</p>}
-        </div>
+        </div>} />
       </Router>
     );
   }
@@ -67,6 +67,7 @@ FullItem.propTypes = {
   isEditing: PropTypes.bool.isRequired,
   currentEditField: PropTypes.string.isRequired,
   actions: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export default FullItem;

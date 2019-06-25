@@ -1,6 +1,10 @@
 .root {
   display: block;
+  padding-left: 10px;
+  border-left: 2px rgb(183, 58, 58) dashed;
   margin: 10px 50px;
+  min-width:380px;
+  max-width: 500px;
 
   input, textarea {
     display: block;
@@ -16,11 +20,10 @@
     outline: none;
     padding: 10px 15px;
     height: 50px;
-    width: 250px;
+    width: 200px;
     font-size: 1em;
 
     color: color(#575756 a(0.5));
-    text-transform: uppercase;
     letter-spacing: 1.5px;
 
     margin-bottom: 10px;
@@ -30,14 +33,21 @@
 
   textarea {
     margin-right: 0;
-    width: 500px;
+    width: 200px;
+    float:left;
     height: 500px;
     text-transform: none;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 15px;
+    border-radius: 10px;
+    letter-spacing: 0.3px;
+    font-family: 'Times New Roman', Times, serif;
   }
 
   img {
-    max-width: 500px;
-    max-height: 300px;
+    max-width: 150px;
+		max-height: 300px;
     display: block;
     float: left;
     margin-right: 15px;

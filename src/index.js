@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 import history from './history';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { PersistGate } from 'redux-persist/integration/react';
 
 import Catalogue from './containers/Catalogue';

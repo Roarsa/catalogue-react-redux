@@ -37,7 +37,7 @@ export const changeItemAuthor = (id, author) => ({
   author
 });
 
-export const changeUrl = (url) => ({
-  type: types.CHANGE_URL,
-  url
+export const changeSearch = (search) => ({
+  type: types.CHANGE_SEARCH,
+  search,
 });

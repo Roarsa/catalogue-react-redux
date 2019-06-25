@@ -4,6 +4,8 @@ module.exports = {
   ],
   devServer: {
     contentBase: './dist',
+    publicPath: '/',
+    historyApiFallback: true,
   },
   module: {
     rules: [{

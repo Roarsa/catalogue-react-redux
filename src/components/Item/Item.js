@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Item.scss';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 
 class Item extends React.PureComponent {
   render() {
@@ -9,7 +9,6 @@ class Item extends React.PureComponent {
       item,
       actions
     } = this.props;
-
     return (
       <div key={item.id} className={styles.item}>
         <img src={item.photo}></img>
@@ -20,6 +19,12 @@ class Item extends React.PureComponent {
       </div>
     );
   }
+}
+
+Item.PropTypes = {
+  item: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 }
 
 Item.propTypes = {
