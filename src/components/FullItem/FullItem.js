@@ -21,10 +21,16 @@ class FullItem extends React.PureComponent {
             value={item.name}
             onChange={event => actions.renameItem(item.id, event.target.value)}
             onBlur={() => {
+              if (event.target.value.trim() == "") {
+                actions.removeItem(item.id);
+              }
               actions.changeEditField(-1, '')
             }}
             onKeyDown={(event) => {
               if (event.keyCode === 13) {
+                if (event.target.value.trim() == "") {
+                  actions.removeItem(item.id);
+                }
                 actions.changeEditField(-1, '')
               }
             }}
@@ -34,10 +40,16 @@ class FullItem extends React.PureComponent {
             value={item.author}
             onChange={event => actions.changeItemAuthor(item.id, event.target.value)}
             onBlur={() => {
+              if (event.target.value.trim() == "") {
+                actions.changeItemAuthor(item.id, "Неизвестно")
+              }
               actions.changeEditField(-1, '')
             }}
             onKeyDown={(event) => {
               if (event.keyCode === 13) {
+                if (event.target.value.trim() == "") {
+                  actions.changeItemAuthor(item.id, "Неизвестно")
+                }
                 actions.changeEditField(-1, '')
               }
             }}
@@ -48,10 +60,16 @@ class FullItem extends React.PureComponent {
             value={item.description}
             onChange={event => actions.changeItemDescription(item.id, event.target.value)}
             onBlur={() => {
+              if (event.target.value.trim() == "") {
+                actions.changeItemDescription(item.id, "Описание отсутствует")
+              }
               actions.changeEditField(-1, '')
             }}
             onKeyDown={(event) => {
               if (event.keyCode === 13) {
+                if (event.target.value.trim() == "") {
+                  actions.changeItemDescription(item.id, "Описание отсутствует")
+                }
                 actions.changeEditField(-1, '')
               }
             }}

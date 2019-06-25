@@ -22,6 +22,7 @@ const AddBlock = ({ add }) => {
       >
         <label className={styles.field}>
           <input
+            required
             className={styles.text}
             name="name"
             value={name}
@@ -35,6 +36,7 @@ const AddBlock = ({ add }) => {
         </label>
         <label className={styles.field}>
           <input
+            required
             className={styles.text}
             name="author"
             placeholder="Автор"
@@ -48,6 +50,7 @@ const AddBlock = ({ add }) => {
         </label>
         <label className={styles.field}>
           <textarea
+            required
             className={styles.text}
             name="description"
             placeholder="Описание"
@@ -61,6 +64,7 @@ const AddBlock = ({ add }) => {
         </label>
         <label className={styles.field}>
           <input
+            required
             className={styles.text}
             name="photo"
             placeholder="Фото"
